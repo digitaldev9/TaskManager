@@ -4,21 +4,25 @@ import {
   Route
 } from "react-router-dom";
 
-import Home from "./pages/Hero"
+import Hero from "../pages/Hero";
 
-import TaskPage from "./pages/TaskPage";
+import TaskPage from "../pages/TaskPage";
 
-import CreateTaskPage from "./pages/tasks/CreateTask";
+import CreateTaskPage from "../pages/tasks/CreateTask";
 
-import EditTaskPage from "./pages/tasks/EditTask";
+import EditTaskPage from "../pages/tasks/EditTask";
+import Navbar from "../components/layout/Navbar"
 
-export default function App() {
+export default function AppRouter() {
   return (
     <BrowserRouter>
+     <div className="min-h-screen bg-gray-100">
+        <Navbar />
+
       <Routes>
         <Route
           path="/"
-          element={<Home />}
+          element={<Hero />}
         />
 
         <Route
@@ -36,6 +40,7 @@ export default function App() {
           element={<EditTaskPage />}
         />
       </Routes>
+      </div>
     </BrowserRouter>
   );
 }
